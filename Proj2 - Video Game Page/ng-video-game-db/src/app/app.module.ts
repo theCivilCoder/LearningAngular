@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+// import {HttpClient} from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
 
 import { GaugeModule } from 'angular-gauge';
@@ -16,6 +16,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { Router, RouterModule } from '@angular/router';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { HomeComponent } from './components/home/home.component';
 // import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
@@ -23,6 +24,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
   declarations: [
     AppComponent,
     SearchBarComponent,
+    HomeComponent,
     // SearchBarComponent
   ],
   imports: [
