@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 // import {HttpClient} from '@angular/common/http';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { GaugeModule } from 'angular-gauge';
 import {MatTabsModule} from '@angular/material/tabs';
@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { Router, RouterModule } from '@angular/router';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptors';
+import { HttpsErrorsInterceptor } from './interceptors/http-errors.interceptors';
 // import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
@@ -40,7 +42,18 @@ import { HomeComponent } from './components/home/home.component';
     MatTabsModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpHeadersInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpsErrorsInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
