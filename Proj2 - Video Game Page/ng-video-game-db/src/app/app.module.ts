@@ -14,12 +14,18 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
-import { Router, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptors';
 import { HttpsErrorsInterceptor } from './interceptors/http-errors.interceptors';
 // import { SearchBarComponent } from './components/search-bar/search-bar.component';
+
+const appRoutes: Routes = [
+  {path: "", component:HomeComponent},
+  {path: "about", component:AboutComponent},
+];
 
 
 @NgModule({
@@ -34,7 +40,8 @@ import { HttpsErrorsInterceptor } from './interceptors/http-errors.interceptors'
     BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule,
+    RouterModule.forRoot(appRoutes, {enableTracing:true}),
+    // HttpClientModule,
     FormsModule,
     GaugeModule.forRoot(),
     MatFormFieldModule,
