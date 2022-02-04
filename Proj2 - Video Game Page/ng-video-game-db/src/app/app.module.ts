@@ -41,7 +41,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule,
     RouterModule.forRoot(appRoutes, {enableTracing:true}),
-    // HttpClientModule,
+    HttpClientModule,
     FormsModule,
     GaugeModule.forRoot(),
     MatFormFieldModule,
