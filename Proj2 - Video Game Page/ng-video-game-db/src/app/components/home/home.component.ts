@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private httpService: HttpService,
+    private router:Router,
     private activatedRoute: ActivatedRoute
   ) { }
 
@@ -48,5 +49,10 @@ export class HomeComponent implements OnInit {
       this.routeSub.unsubscribe();
     }
   }
+
+  openGameDetails(id:string): void{
+    this.router.navigate(["details", id]) 
+  }
+
 
 }
