@@ -1,0 +1,26 @@
+@import "src/styles.scss";
+
+.section3{
+    padding:25px;
+    margin:10px;
+    background-color: $grey-3;
+    color:white;
+}
+
+.row{
+    padding:5px;
+}
+
+.form-control{
+    background-color: black;
+    border: 0;
+    color:white;
+}
+
+.form-check{
+    padding-right: 15px;
+}
+
+.radio-text{
+    background-color: black;
+}
