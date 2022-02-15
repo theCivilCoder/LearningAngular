@@ -1,0 +1,20 @@
+<mat-toolbar>
+    <span>Popup Title in Toolbar</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabindex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<div class="popup-form">
+    <form class="row g-3">
+        <div class="row g-4">
+            <div class="col">
+                <label for="year2" class="form-label">Yearsss <span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="year2" name="year2">
+            </div>
+            <div class="col">
+                <label for="parent2" class="form-label">Parent</label>
+                <input type="text" class="form-control" id="parent2">
+            </div>
+        </div>
+    </form>
+</div>
+<button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>

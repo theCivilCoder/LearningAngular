@@ -1,0 +1,66 @@
+<div class="rfx-container d-flex flex-column m-4 p-4">
+    <h4 class="text-white">Active Requests</h4>
+
+    <!-- Buttons to add, mark complete, and delete request forms -->
+    <div class="d-flex flex-row my-3">
+        <!-- <button type="button" class="btn" routerLink="/new-request"><fa-icon [icon]="faPlus"></fa-icon> New Request</button>
+        <button type="button" class="btn mx-2"><fa-icon [icon]="faCheck"></fa-icon> Mark Complete</button>
+        <button type="button" class="btn"><fa-icon [icon]="faTrash"></fa-icon> Delete</button> -->
+        <button type="button" class="btn" routerLink="/new-request">New Request</button>
+        <button type="button" class="btn mx-2"> Mark Complete</button>
+        <button type="button" class="btn">Delete</button>
+    </div>
+
+    <!-- DataTable that list all the user request forms -->
+    <table datatable [dtOptions]="dtOptions" class="table table-bordered me-3">
+        <thead class="table-header">
+            <tr>
+                <!-- Checkbox column -->
+                <th scope="col" class="text-center">
+                    <input class="form-check-input" type="checkbox" value="">
+                </th>
+
+                <!-- Table headers -->
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Project Owner</th>
+                <th scope="col">Status</th>
+                <th scope="col">Response Progress</th>
+                <th scope="col">Results</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Populate the table rows -->
+            <tr *ngFor="let datum of dummyData" class="table-cells">
+                <th scope="row" class="text-center align-middle">
+                    <input class="form-check-input" type="checkbox" value="">
+                </th>
+                <td class="align-middle">{{ datum.name }}</td>
+                <td class="align-middle">{{ datum.type }}</td>
+                <td class="align-middle">{{ datum.projectOwner }}</td>
+                <td class="align-middle">{{ datum.status }}</td>
+
+                <!-- Response progress bar -->
+                <td>
+                    <!-- Hidden element used for column sorting -->
+                    <p hidden>{{ datum.numCompletedResponses / datum.numTotalResponses }}</p>
+                    <div class="progress position-relative">
+                        <div class="progress-bar" role="progressbar" style="width: {{ datum.numCompletedResponses / datum.numTotalResponses * 100}}%"></div>
+                        <p class="justify-content-center d-flex position-absolute w-100">{{ datum.numCompletedResponses }}/{{ datum.numTotalResponses }}</p>
+                    </div>
+                </td>
+
+                <!-- Link to view results once responses are completed -->
+                <td class="text-center align-middle" *ngIf="datum.numCompletedResponses === datum.numTotalResponses else pending" >
+                    <a href="/">View Results</a>
+                </td>
+
+                <ng-template #pending>
+                    <td class="text-center align-middle">Pending</td>
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<button type="button" class="btn btn-primary" (click)="onCreate()">Create New</button>
