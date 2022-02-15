@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
   }
@@ -18,4 +19,5 @@ export class FormComponent implements OnInit {
     console.log("clicked on submit")
   }
 
+  
 }
