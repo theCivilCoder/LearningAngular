@@ -12,13 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { Modal2Component } from './modal2/modal2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     EndPageComponent,
-    PopupDialogComponent
+    PopupDialogComponent,
+    Modal2Component
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EndPageComponent } from './end-page/end-page.component';
 import { FormComponent } from './form/form.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
+import { Modal2Component } from './modal2/modal2.component';
 import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:"end", component:EndPageComponent},
   {path:"popup", component:PopupDialogComponent},
   {path:"modal", component:ModalComponentComponent},
+  {path:"modal2", component:Modal2Component},
 ];
 
 @NgModule({

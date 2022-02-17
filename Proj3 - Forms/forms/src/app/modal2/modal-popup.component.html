@@ -1,0 +1,45 @@
+<!-- <div class="modal-header">
+    <h4 class="modal-title">Hi there!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p>Hello, {{name}}!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div> -->
+
+<!-- <div class="popup-form"> -->
+<!-- <ng-template #content > -->
+    <div class="modal-header">
+        <h4 class="modal-title">Hi there! {{ name }}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form class="row g-3">
+            <div class="row g-4">
+                <div class="col">
+                    <label for="year2" class="form-label">Yearsss <span style="color:red">*</span></label>
+                    <input type="text" class="form-control" id="year2" name="year2">
+                </div>
+                <div class="col">
+                    <label for="parent2" class="form-label">Parent</label>
+                    <input type="text" class="form-control" id="parent2">
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col">
+                    <label for="year2" class="form-label">Yearsss <span style="color:red">*</span></label>
+                    <input type="text" class="form-control" id="year2" name="year2">
+                </div>
+                <div class="col">
+                    <label for="parent2" class="form-label">Parent</label>
+                    <input type="text" class="form-control" id="parent2">
+                </div>
+            </div>
+        </form>
+    </div>
+    
+<!-- </ng-template> -->
+<!-- </div> -->
+<!-- <button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button> -->
