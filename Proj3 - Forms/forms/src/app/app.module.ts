@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import { Modal2Component } from './modal2/modal2.component';
+import { Modal2Component, NgbdModalContent } from './modal2/modal2.component';
 import { GroupComponent } from './group/group.component';
 import { GroupChildComponent } from './group/group-child.component';
 
@@ -24,7 +24,8 @@ import { GroupChildComponent } from './group/group-child.component';
     PopupDialogComponent,
     Modal2Component,
     GroupComponent,
-    GroupChildComponent
+    GroupChildComponent,
+    NgbdModalContent
   ],
   imports: [
     BrowserModule,
