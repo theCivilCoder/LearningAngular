@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { Modal2Component } from './modal2/modal2.component';
+import { GroupComponent } from './group/group.component';
+import { GroupChildComponent } from './group/group-child.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { Modal2Component } from './modal2/modal2.component';
     FormComponent,
     EndPageComponent,
     PopupDialogComponent,
-    Modal2Component
+    Modal2Component,
+    GroupComponent,
+    GroupChildComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { Modal2Component } from './modal2/modal2.component';
     BrowserAnimationsModule,
     MatDialogModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent],

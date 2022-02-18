@@ -1,0 +1,14 @@
+<form novalidate [formGroup]="form">
+    <div>
+      Name <input formControlName="name"/>
+    </div>
+    <app-group-child formGroupName="address"></app-group-child>
+    <!-- <div>
+      Address line 1 <input formControlName="address_line1" placeholder="add1"/>
+    </div>
+    <div>
+      Address line 2 <input formControlName="address_line2"/>
+    </div> -->
+    <button class="btn btn-primary" type="submit" (click)="onSubmit()"></button>
+</form>
+
