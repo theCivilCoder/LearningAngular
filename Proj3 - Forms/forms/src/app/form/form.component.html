@@ -54,6 +54,34 @@
                 </div>
             </div>
     </div>
+
+    <div class="row my-3">
+      <table class="table table-bordered" > 
+        <thead class="table-header">
+          <tr>
+            <!-- Checkbox column -->
+            <th scope="col" style="width:5%">Select recipient</th>
+
+            <th scope="col">Email</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Company</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          <tr *ngFor="let email of arrEmails; let i = index" class="table-cells">
+            <th scope="row" class="text-center align-middle">
+              <input class="form-check-input" type="checkbox" (change)="toggle(i)">
+            </th>
+            <td class="align-middle">{{ email.address }}</td>
+            <td class="align-middle">{{ email.name }}</td>
+            <td class="align-middle">{{ email.gender }}</td>
+            <td class="align-middle">{{ email.company }}</td>
+          </tr> 
+        </tbody>
+      </table>
+    </div>
         
         <!-- <div class="col-12">
           <label for="inputAddress" class="form-label">Address</label>
