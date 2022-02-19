@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { Modal2Component, NgbdModalContent } from './modal2/modal2.component';
 import { GroupComponent } from './group/group.component';
 import { GroupChildComponent } from './group/group-child.component';
+import { CheckboxTextComponent } from './checkbox-text/checkbox-text.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GroupChildComponent } from './group/group-child.component';
     Modal2Component,
     GroupComponent,
     GroupChildComponent,
-    NgbdModalContent
+    NgbdModalContent,
+    CheckboxTextComponent
   ],
   imports: [
     BrowserModule,

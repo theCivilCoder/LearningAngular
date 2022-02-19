@@ -28,29 +28,30 @@
             <label for="form" class="form-label">Form <span style="color:red">*</span></label>
             <div class="d-flex flex-row">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked ngModel>
                     <label class="form-check-label" for="gridRadios1">
                         First radio
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" ngModel>
                     <label class="form-check-label" for="gridRadios2">
                         Second radio
                     </label>
                 </div>
                 <div class="form-check">
                 <!-- <div class="form-check disabled"> -->
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" >
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" ngModel>
                     <!-- <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled> -->
                     <label class="form-check-label" for="gridRadios3">
                         Third disabled radio
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="{{other}}" ngModel>
                         Other (please specify): 
-                    <input type="text" class="radio-text" id="other"/>
+                    <!-- <input type="text" class="radio-text" id="other" [(ngModel)]="other"/> -->
+                    <input type="text" class="radio-text" id="other" />
                 </div>
             </div>
     </div>
@@ -82,38 +83,7 @@
         </tbody>
       </table>
     </div>
-        
-        <!-- <div class="col-12">
-          <label for="inputAddress" class="form-label">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">City</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-4">
-          <label for="inputState" class="form-label">State</label>
-          <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <label for="inputZip" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div> -->
+
         <div class="col-12">
           <button type="submit" class="btn btn-primary" >Submit</button>
         </div>

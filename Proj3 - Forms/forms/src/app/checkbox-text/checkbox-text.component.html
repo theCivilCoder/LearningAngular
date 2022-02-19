@@ -1,0 +1,73 @@
+
+<div class="d-flex flex-row my-3">
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" [(ngModel)]="gridRadios" >
+        <label class="form-check-label" for="gridRadios1">
+            First radio
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" [(ngModel)]="gridRadios">
+        <label class="form-check-label" for="gridRadios2">
+            Second radio
+        </label>
+    </div>
+    <div class="form-check">
+    <!-- <div class="form-check disabled"> -->
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" [(ngModel)]="gridRadios">
+        <label class="form-check-label" for="gridRadios3">
+            Third disabled radio
+        </label>
+    </div>
+    <div class="form-check">
+        <!-- <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="{{other}}" [(ngModel)]="gridRadios"> -->
+        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="other" [(ngModel)]="gridRadios">
+            Other (please specify): 
+        <input type="text" class="radio-text" id="other" [(ngModel)]="other"/>
+        <!-- <input type="text" class="radio-text" id="other" /> -->
+    </div>
+</div>
+
+<hr>
+
+<!-- Testing the autoSelection of the radio beside other when user clicks on text input -->
+<div class="d-flex flex-row my-3">
+    <div class="form-check">
+        <span (click)="resetRadio()">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked >
+            First radio
+        </span>
+    </div>
+    <div class="form-check">
+        <span (click)="resetRadio()">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" >
+            Second radio
+        </span>
+
+    </div>
+    <div class="form-check">
+    <!-- <div class="form-check disabled"> -->
+        <span (click)="resetRadio()">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" >
+            Third disabled radio
+        </span>
+        
+
+    </div>
+    <div class="form-check">
+        <!-- <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="{{other}}" [(ngModel)]="gridRadios"> -->
+        <span (click)="checkRadio()">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="other" [checked]="checkedOther">
+            Other (please specify): 
+            <input type="text" class="radio-text" id="other" />
+        </span>
+        
+        <!-- <input type="text" class="radio-text" id="other" /> -->
+    </div>
+</div>
+
+
+
+<div class="col-12">
+<button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</div>

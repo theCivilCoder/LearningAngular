@@ -16,13 +16,20 @@ export class FormComponent implements OnInit {
 
   arrSelection = Array(this.arrEmails.length).fill(false);
 
+  other = '';
+
   constructor( ) {   }
 
   ngOnInit(): void {
   }
 
+  update(form: NgForm){
+    this.other = form.value.other
+  }
+
   onSubmit(form: NgForm){
     console.log(form.value.year)
+    console.log(form.value.gridRadios)
 
     let arrRecipients: Object[] = [];
     this.arrSelection.forEach( (isChecked, index) =>{
