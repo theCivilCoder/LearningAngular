@@ -1,16 +1,16 @@
-<div class="question-card p-2">
+<div class="question-card p-2" [formGroup]="questionForm">
     <div class="row gx-3 py-2 label">
         <div class="col-md-1">
-            Question: 
+            Q: 
         </div>
         <div class="col-md-5">
-            <textarea class="form-control" cols="40" rows="3"></textarea>
+            <textarea class="form-control" cols="40" rows="3" formControlName="question"></textarea>
         </div>
         <div class="col-md-1">
-            Answer: 
+            A: 
         </div>
         <div class="col-md-5">
-            <textarea class="form-control" cols="40" rows="3"></textarea>
+            <textarea class="form-control" cols="40" rows="3" formControlName="answer"></textarea>
         </div>
         <!-- <div class="col-md-6">
             <div class="d-flex flex-row my-1">
@@ -39,19 +39,19 @@
             Category: 
         </div>
         <div class="col-md-5">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" formControlName="category">
         </div>
         <div class="col-md-1">
-            Subcategory: 
+            Group: 
         </div>
         <div class="col-md-3">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" formControlName="categoryGroup">
         </div>
         <div class="col-md-1">
-            Subcategory: 
+            Number: 
         </div>
         <div class="col-md-1 label">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" formControlName="weight">
         </div>
     </div>
     <hr class="label">

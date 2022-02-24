@@ -1,7 +1,8 @@
-<div class="container">
-    <div *ngFor="let num of arrEntries; let odd = odd; let even = even;">
+<div class="container" [formGroup]="form">
+    <div *ngFor="let num of arrEntries; let idx=index;">
         <!-- <div>{{num}}</div> -->
-        <app-dynamic-entry [ngClass]="{darkCard:odd, greyCard:even}"></app-dynamic-entry>
+        <!-- <app-dynamic-entry [ngClass]="{darkCard:odd, greyCard:even}"></app-dynamic-entry> -->
+        <app-dynamic-entry formGroupName="{{arrFormGroupNames[num]}}"></app-dynamic-entry>
     </div>
     <button class="btn btn-primary" type="submit" (click)="addNewEntry()">Add</button>
 </div>
