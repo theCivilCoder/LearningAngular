@@ -1,57 +1,21 @@
 <div class="question-card p-2" [formGroup]="questionForm">
     <div class="row gx-3 py-2 label">
         <div class="col-md-1">
-            Q: 
+            Question: 
         </div>
         <div class="col-md-5">
             <textarea class="form-control" cols="40" rows="3" formControlName="question"></textarea>
+            <!-- <textarea class="form-control" cols="40" rows="3" formControlName="question" *ngIf="questionForm.controls['question'].value == ''"></textarea>
+            <textarea class="form-control" cols="40" rows="3" formControlName="question" *ngIf="questionForm.controls['question'].value != ''" value="questionForm.controls['question'].value"></textarea> -->
+            <p>{{questionForm.controls['question'].value}}</p>
         </div>
         <div class="col-md-1">
-            A: 
+            Answer: 
         </div>
         <div class="col-md-5">
             <textarea class="form-control" cols="40" rows="3" formControlName="answer"></textarea>
-        </div>
-        <!-- <div class="col-md-6">
-            <div class="d-flex flex-row my-1">
-                Question: 
-                <textarea class="form-control" ></textarea>
-            </div>
-            <div class="d-flex flex-row my-1">
-                Category: 
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="d-flex flex-row my-1">
-                Answer: 
-                <textarea class="form-control" ></textarea>
-            </div>
-            <div class="d-flex flex-row my-1">
-                Subcategory: 
-                <input type="text" class="form-control">
-            </div>
-        </div> -->
-
-    </div>
-    <div class="row gx-3 py-2 label">
-        <div class="col-md-1">
-            Category: 
-        </div>
-        <div class="col-md-5">
-            <input class="form-control" type="text" formControlName="category">
-        </div>
-        <div class="col-md-1">
-            Group: 
-        </div>
-        <div class="col-md-3">
-            <input class="form-control" type="text" formControlName="categoryGroup">
-        </div>
-        <div class="col-md-1">
-            Number: 
-        </div>
-        <div class="col-md-1 label">
-            <input class="form-control" type="text" formControlName="weight">
+            <!-- <textarea class="form-control" cols="40" rows="3" formControlName="answer" *ngIf="questionForm.controls['answer'].value === ''"></textarea>
+            <textarea class="form-control" cols="40" rows="3" formControlName="answer" *ngIf="questionForm.controls['answer'].value !== ''" value="questionForm.controls['answer'].value"></textarea> -->
         </div>
     </div>
     <hr class="label">

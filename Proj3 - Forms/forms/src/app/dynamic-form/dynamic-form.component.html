@@ -1,8 +1,16 @@
 <div class="container" [formGroup]="form">
     <div *ngFor="let num of arrEntries; let idx=index;">
-        <!-- <div>{{num}}</div> -->
-        <!-- <app-dynamic-entry [ngClass]="{darkCard:odd, greyCard:even}"></app-dynamic-entry> -->
-        <app-dynamic-entry formGroupName="{{arrFormGroupNames[num]}}"></app-dynamic-entry>
+        <!-- <div class="d-flex flex-row"> -->
+        <div class="row">
+            <div class="col-md-11">
+                <app-dynamic-entry formGroupName="{{arrFormGroupNames[num]}}"></app-dynamic-entry>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" (click)="deleteSingleEntry(idx)">X</button>
+
+            </div>
+        </div>
     </div>
     <button class="btn btn-primary" type="submit" (click)="addNewEntry()">Add</button>
+    <button class="btn btn-warning" type="submit" (click)="displayForm()">Check Form</button>
 </div>
