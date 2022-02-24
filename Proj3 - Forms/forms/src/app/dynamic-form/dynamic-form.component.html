@@ -1,0 +1,7 @@
+<div class="container">
+    <div *ngFor="let num of arrEntries; let odd = odd; let even = even;">
+        <!-- <div>{{num}}</div> -->
+        <app-dynamic-entry [ngClass]="{darkCard:odd, greyCard:even}"></app-dynamic-entry>
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="addNewEntry()">Add</button>
+</div>

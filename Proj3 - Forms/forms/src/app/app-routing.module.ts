@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CheckboxTextComponent } from './checkbox-text/checkbox-text.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { EndPageComponent } from './end-page/end-page.component';
 import { FormComponent } from './form/form.component';
 import { GroupComponent } from './group/group.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"modal2", component:Modal2Component},
   {path:"group", component:GroupComponent},
   {path:"form2", component:CheckboxTextComponent},
+  {path:"dynamic", component:DynamicFormComponent}
   
 ];
 

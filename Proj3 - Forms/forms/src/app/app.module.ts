@@ -16,6 +16,8 @@ import { Modal2Component, NgbdModalContent } from './modal2/modal2.component';
 import { GroupComponent } from './group/group.component';
 import { GroupChildComponent } from './group/group-child.component';
 import { CheckboxTextComponent } from './checkbox-text/checkbox-text.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { DynamicEntryComponent } from './dynamic-entry/dynamic-entry.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CheckboxTextComponent } from './checkbox-text/checkbox-text.component';
     GroupComponent,
     GroupChildComponent,
     NgbdModalContent,
-    CheckboxTextComponent
+    CheckboxTextComponent,
+    DynamicFormComponent,
+    DynamicEntryComponent
   ],
   imports: [
     BrowserModule,
