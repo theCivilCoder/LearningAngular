@@ -20,6 +20,8 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicEntryComponent } from './dynamic-entry/dynamic-entry.component';
 import { DynamicExampleComponent } from './dynamic-example/dynamic-example.component';
 import { StepperComponent } from './stepper/stepper.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DynamicEntryOtherComponent } from './dynamic-entry-other/dynamic-entry-other.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { StepperComponent } from './stepper/stepper.component';
     DynamicFormComponent,
     DynamicEntryComponent,
     DynamicExampleComponent,
-    StepperComponent
+    StepperComponent,
+    DynamicEntryOtherComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { StepperComponent } from './stepper/stepper.component';
     MatDialogModule,
     MatToolbarModule,
     MatIconModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    NgbModule 
   ],
   providers: [],
   bootstrap: [AppComponent],

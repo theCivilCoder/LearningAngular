@@ -5,30 +5,19 @@
             <!-- <div class="d-flex flex-row"> -->
             <div class="row">
                 <div class="col-md-11">
-                    <app-dynamic-entry [formGroupName]="idx"></app-dynamic-entry>
-                    <!-- <div class="question-card p-2" [formGroupName]="idx">
-                        <div class="row gx-3 py-2 label">
-                            <div class="col-md-1">
-                                Question: 
-                            </div>
-                            <div class="col-md-5">
-                                <textarea class="form-control" cols="40" rows="3" formControlName="question"></textarea>
-                            </div>
-                            <div class="col-md-1">
-                                Answer: 
-                            </div>
-                            <div class="col-md-5">
-                                <textarea class="form-control" cols="40" rows="3" formControlName="answer"></textarea>
-                            </div>
-                        </div>
-                        <hr class="label">
-                    </div> -->
+                    <app-dynamic-entry [formGroupName]="idx" *ngIf="arrEntryTypes[idx] =='std'"></app-dynamic-entry>
+                    <app-dynamic-entry-other [formGroupName]="idx" *ngIf="arrEntryTypes[idx] =='other'"></app-dynamic-entry-other>
                 </div>
                 <div class="col-md-1">
                     <button type="submit" (click)="deleteSingleEntry(idx)">X</button>
-    
                 </div>
             </div>
+        </div>
+        <div class="d-flex justify-content-around">
+            <!-- <div class="col-md-6"> -->
+                <button class="btn btn-primary" type="submit" (click)="addNewEntry()">Add Standard</button>
+                <button class="btn btn-primary" type="submit" (click)="addNewEntryOther()">Add Other</button>
+            <!-- </div> -->
         </div>
     </div>
     

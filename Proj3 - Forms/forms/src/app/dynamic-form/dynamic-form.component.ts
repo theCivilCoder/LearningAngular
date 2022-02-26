@@ -12,6 +12,8 @@ export class DynamicFormComponent implements OnInit {
   //FormGroup for saving inputs on each repitition of the entry component
   public form: FormGroup = this.formBuilder.group({})  
 
+  public arrEntryTypes: string[] = [];
+
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({   
       questions: this.formBuilder.array([]) ,  
@@ -32,6 +34,29 @@ export class DynamicFormComponent implements OnInit {
         'answer':''
       })
     )
+    this.arrEntryTypes.push('std')
+  }
+
+  addNewEntryOther(){
+    this.getAllQuestions().push(
+      this.formBuilder.group({
+        'question':'',
+        // 'answers': this.formBuilder.array([]),
+        'answers': this.formBuilder.array(['BAD OPTION', 'GOOD OPTION']),
+        // 'answers': this.formBuilder.array([
+        //   this.formBuilder.group({
+        //     0:'BAD OPTION'
+        //   }),
+        //   this.formBuilder.group({
+        //     1:'GOOD OPTION'
+        //   }),
+        // ]),
+        'selectedAnswer':'',
+        'selectedAnswerMC':''
+      })
+    )
+    this.arrEntryTypes.push('other')
+
   }
 
   deleteSingleEntry(idx: number){
@@ -42,5 +67,7 @@ export class DynamicFormComponent implements OnInit {
   displayForm() {
     console.log(this.form.getRawValue())
   }
+
+  
 
 }
