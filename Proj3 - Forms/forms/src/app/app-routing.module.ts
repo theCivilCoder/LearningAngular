@@ -9,6 +9,7 @@ import { GroupComponent } from './group/group.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
 import { Modal2Component } from './modal2/modal2.component';
 import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 const routes: Routes = [
   {path:"", component:FormComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:"group", component:GroupComponent},
   {path:"form2", component:CheckboxTextComponent},
   {path:"dynamic", component:DynamicFormComponent},
-  {path:'test', component:DynamicExampleComponent}
+  {path:'dynamic-ex', component:DynamicExampleComponent},
+  {path:'stepper', component:StepperComponent},
   
 ];
 

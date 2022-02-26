@@ -19,6 +19,7 @@ import { CheckboxTextComponent } from './checkbox-text/checkbox-text.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicEntryComponent } from './dynamic-entry/dynamic-entry.component';
 import { DynamicExampleComponent } from './dynamic-example/dynamic-example.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DynamicExampleComponent } from './dynamic-example/dynamic-example.compo
     CheckboxTextComponent,
     DynamicFormComponent,
     DynamicEntryComponent,
-    DynamicExampleComponent
+    DynamicExampleComponent,
+    StepperComponent
   ],
   imports: [
     BrowserModule,
