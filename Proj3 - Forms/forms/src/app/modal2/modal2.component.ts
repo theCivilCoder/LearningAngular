@@ -45,6 +45,7 @@ export class Modal2Component implements OnInit {
     modalRef.result.then((result) => {
       if (result) {
         console.log(result);
+        console.table(result);
       }
     });
   }
