@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlContainer, FormArray, FormBuilder } from '@angular/forms';
+import { ControlContainer, FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-entry-other',
@@ -15,22 +15,7 @@ export class DynamicEntryOtherComponent implements OnInit {
 
   ngOnInit(): void {
     this.questionForm = this.controlContainer.control;
-    
-
-    // this.getAllAnswers().push(this.formBuilder.group({ 0:'BAD OPTION',})
-    // this.getAllAnswers().push(this.formBuilder.group({ 1: 'GOOD OPTION'})
-
-    // console.log(this.arrAnswers)
-    console.log(this.getAllAnswers().controls)
-    console.log(this.getAllAnswers().controls[0])
-    // console.log(this.getAllAnswers().controls[0].get('value'))
-    console.log(this.getAllAnswers().controls[0].value)
-
-    // // this.getAllAnswers();
-    // this.arrAnswers = this.getAllAnswers()
-    // // this.arrAnswers = this.getAllAnswers().getRawValue();
-    // console.log(this.arrAnswers)
-    // console.log(typeof this.arrAnswers)
+    console.log(this.questionForm.getRawValue())
   }
 
 
@@ -40,6 +25,43 @@ export class DynamicEntryOtherComponent implements OnInit {
     return this.questionForm.get('answers') as FormArray
   }
 
+  showAnswers() {
+    console.log(this.questionForm.get('answers').getRawValue())
+    // console.log(this.getAllAnswers().controls)
+    // console.log(this.getAllAnswers().controls[0])
+  }
+
+  addInput(){
+    this.getAllAnswers().push(
+      // this.formBuilder.control({'answer':''})
+      this.formBuilder.group({
+        'answer':''
+      })
+
+    )
+    console.log('this.getAllAnswers().controls')
+    console.log(this.getAllAnswers().controls)
+    console.log(this.getAllAnswers().controls[0])
+    // console.log(this.getAllAnswers())
+    // this.getAllQuestions().push(
+    //   this.formBuilder.group({
+    //     'question':'',
+    //     'answers':[],
+    //     'category':'',
+    //     'categoryGroup':'',
+    //     'weight':'',
+    //   })
+  }
+
+  deleteOption(optionIdx: number){
+    this.getAllAnswers().removeAt(optionIdx)
+  }
+
+  getOneFormGroup(i: number){
+    console.log('in getOne')
+    console.log(this.getAllAnswers().controls[i].value)
+    return this.getAllAnswers().controls[i] as FormGroup;
+  }
 
 
 }

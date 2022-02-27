@@ -1,24 +1,25 @@
 <div class="question-card p-2" [formGroup]="questionForm">
-    <div class="row">
+    <div class="row py-2">
         <div class="col-md-1">
             Question: 
         </div>
         <div class="col-md-11">
             <textarea class="form-control" cols="40" rows="3" formControlName="question"></textarea>
-            <!-- <textarea class="form-control" cols="40" rows="3" formControlName="question" *ngIf="questionForm.controls['question'].value == ''"></textarea>
-            <textarea class="form-control" cols="40" rows="3" formControlName="question" *ngIf="questionForm.controls['question'].value != ''" value="questionForm.controls['question'].value"></textarea> -->
-            <p>{{questionForm.controls['question'].value}}</p>
+            <!-- <p>{{questionForm.controls['question'].value}}</p> -->
         </div>
         
     </div>
-    <div class="d-flex flex-row" >
-        <div *ngFor="let answer of getAllAnswers().controls; let optionIdx=index; ">
-            <div class="d-flex flex-row px-3" >
-                <input class="form-check-input mx-3" type="radio" value="{{answer.value}}" formControlName="selectedAnswerMC">
-                <input class="form-control" type="text" value="{{answer.value}}">            
+    <div class="d-flex flex-row justify-content-between" formArrayName="answers" id="answers">
+        <div *ngFor="let answerGroup of getAllAnswers().controls; let optionIdx=index; let firstOne=first">
+            <div class="d-flex flex-row px-3"  [formGroupName]="optionIdx">
+                <input class="form-check-input mx-1" type="radio" value="optionIdx" >
+                <input class="form-control" type="text"  formControlName="answer">
+                <button class="btn btn-danger" (click)="deleteOption(optionIdx)">X</button>           
             </div>
-            
+            <div *ngIf="firstOne">First one</div>    
         </div>
+        <button type="submit" class="btn btn-secondary btn-sm" (click)="addInput()">Add Input</button>
+        <button type="Answers" class="btn btn-warning btn-sm" (click)="showAnswers()">Show</button>
     </div>
     
    

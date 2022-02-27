@@ -42,15 +42,15 @@ export class DynamicFormComponent implements OnInit {
       this.formBuilder.group({
         'question':'',
         // 'answers': this.formBuilder.array([]),
-        'answers': this.formBuilder.array(['BAD OPTION', 'GOOD OPTION']),
-        // 'answers': this.formBuilder.array([
-        //   this.formBuilder.group({
-        //     0:'BAD OPTION'
-        //   }),
-        //   this.formBuilder.group({
-        //     1:'GOOD OPTION'
-        //   }),
-        // ]),
+        // 'answers': this.formBuilder.array(['BAD OPTION', 'GOOD OPTION']),
+        'answers': this.formBuilder.array([
+          this.formBuilder.group({
+            'answer':'BAD OPTION'
+          }),
+          this.formBuilder.group({
+            'answer':'GOOD OPTION'
+          }),
+        ]),
         'selectedAnswer':'',
         'selectedAnswerMC':''
       })
@@ -65,7 +65,8 @@ export class DynamicFormComponent implements OnInit {
   
 
   displayForm() {
-    console.log(this.form.getRawValue())
+    // console.log(this.form.getRawValue())
+    console.table(this.form.getRawValue())
   }
 
   

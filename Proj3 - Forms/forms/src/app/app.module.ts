@@ -22,6 +22,7 @@ import { DynamicExampleComponent } from './dynamic-example/dynamic-example.compo
 import { StepperComponent } from './stepper/stepper.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DynamicEntryOtherComponent } from './dynamic-entry-other/dynamic-entry-other.component';
+import { McOptionComponent } from './mc-option/mc-option.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DynamicEntryOtherComponent } from './dynamic-entry-other/dynamic-entry-
     DynamicEntryComponent,
     DynamicExampleComponent,
     StepperComponent,
-    DynamicEntryOtherComponent
+    DynamicEntryOtherComponent,
+    McOptionComponent
   ],
   imports: [
     BrowserModule,
