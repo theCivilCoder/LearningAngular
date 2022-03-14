@@ -23,6 +23,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DynamicEntryOtherComponent } from './dynamic-entry-other/dynamic-entry-other.component';
 import { McOptionComponent } from './mc-option/mc-option.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { McOptionComponent } from './mc-option/mc-option.component';
     DynamicExampleComponent,
     StepperComponent,
     DynamicEntryOtherComponent,
-    McOptionComponent
+    McOptionComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
