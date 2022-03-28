@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -17,6 +18,13 @@ export class FormComponent implements OnInit {
   arrSelection = Array(this.arrEmails.length).fill(false);
 
   other = '';
+
+  currentDate = Date.now()
+  pipe = new DatePipe("en-US")
+  // formattedDate = this.pipe.transform(new Date(), "yyyy-MM-dd    h:mm:ss a")
+  formattedDate = this.pipe.transform(new Date(), "MMM d, yyyy h:mm a")
+
+  dummyName = "Unnamed - " + this.formattedDate?.toString();
 
   constructor( ) {   }
 
